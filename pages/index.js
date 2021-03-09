@@ -1,3 +1,5 @@
+import {useState, useRef, useEffect} from "react"
+
 import Head from 'next/head'
 import Link from "next/link"
 import {motion} from "framer-motion"
@@ -53,8 +55,23 @@ export default function Home() {
           </motion.a>
         </Link>
         <Link href="/pageTransition">
-          <motion.a variants={fadeIn} whileHover={{scale: 1.05}} whileTap={{scale: 0.95}} className={styles.link}>
+          <motion.a variants={fadeIn} whileHover={{scale: 1.05}} whileTap={{scale: 0.95}} className={styles.link} layoutId="title">
             Page Transition
+          </motion.a>
+        </Link>
+        <Link href="/keyframes">
+          <motion.a variants={fadeIn} whileHover={{scale: 1.05}} whileTap={{scale: 0.95}} className={styles.link}>
+            Keyframes
+          </motion.a>
+        </Link>
+        <Link href="/motionValues">
+          <motion.a variants={fadeIn} whileHover={{scale: 1.05}} whileTap={{scale: 0.95}} className={styles.link}>
+            Motion Values
+          </motion.a>
+        </Link>
+        <Link href="/scroll">
+          <motion.a variants={fadeIn} whileHover={{scale: 1.05}} whileTap={{scale: 0.95}} className={styles.link}>
+            Scroll
           </motion.a>
         </Link>
       </motion.div>
@@ -88,3 +105,4 @@ const fadeIn = {
       }
     },
 }
+

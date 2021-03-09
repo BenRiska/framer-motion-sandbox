@@ -29,3 +29,53 @@ a {
 .margin {
   margin: 1rem;
 }
+
+.item {
+  display: block;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 50px;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.outline {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border: 10px solid white;
+  border-radius: 50%;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.progress-icon {
+  position: fixed;
+  top: 200px;
+  width: 120px;
+  height: 120px;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.height-boost {
+  min-height: 200vh;
+}

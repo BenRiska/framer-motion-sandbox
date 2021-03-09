@@ -5,6 +5,7 @@ import {motion, useAnimation} from "framer-motion"
 const expand = () => {
 
     const controls = useAnimation()
+    const [isOpen, setIsOpen] = useState(false)
 
     return (
         <div className="container">
@@ -34,8 +35,36 @@ const expand = () => {
             animate={controls}
             >
             </motion.div>
+            <h2 className="padding">complex expand with clip path</h2>
+            <button onClick={() => setIsOpen(!isOpen)} className="padding margin">Show full</button>
+            <motion.div
+            className="background"
+            initial={false}
+            animate={isOpen ? "open" : "closed"}
+            variants={sidebar}
+            >
+            </motion.div>
         </div>
     )
 }
+
+const sidebar = {
+    open: (height = 1000) => ({
+      clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+      transition: {
+        type: "spring",
+        stiffness: 20,
+        restDelta: 2
+      }
+    }),
+    closed: {
+      clipPath: "circle(30px at 40px 40px)",
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 40
+      }
+    }
+  };
 
 export default expand
